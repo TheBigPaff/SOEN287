@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="styles.css">
+        
+        <title>Contact</title>
     </head>
 
     <body>
-        <!-- name field, left aligned-->
-        <input type="text" name="name" value="Patrick Deniso">
+        <div class="topnav">        
+            <a href="home.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="projects.html">Projects</a>
+            <a class="active" href="contact.html">Contact</a>
+            <a href="social.html">Social</a>
+            <a href="admin.html">Admin</a>
+        </div>
 
-        <!-- email field, left aligned -->
-        <input type="email" name="email" value="patrickdeniso@gmail.com">
 
-        <!-- phone number field, left aligned-->
-        <input type="tel" name="phone_number" value="(438) 420-6969">
+        <h2>Contact Me!</h2>
 
-        <!-- message box, left aligned -->
-        <textarea>Message box! I don't know what this is for because this page clearly doesn't have a submit button *shrugs*</textarea>
+        <div class="form-container">
+            <form action="#">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name...">
 
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email...">
+
+                <label for="telnumber">Phone number</label>
+                <input type="tel" id="telnumber" name="telnumber" placeholder="Your phone number...">
+
+                <label for="subject">Message</label>
+                <textarea id="subject" name="subject" placeholder="Enter your message here..." style="height:200px"></textarea>
+
+                <input class="form-btn" type="submit" value="Send Message">
+            </form>
+        </div>
     </body>
 </html>

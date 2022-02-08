@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* ----------- HEADER -----------*/
+.topnav {
+    background-color: #1D3354;
+    overflow: hidden;
+    text-align:center;
+}
+  
+.topnav a {
+    color: #E9FFF9;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    display:inline-block;
+    text-align: center;
+}
+
+.topnav a:hover {
+    background-color: #9ED8DB;
+    color: #1D3354;
+}
+
+.topnav a.active {
+    background-color: #467599;
+    color: #E9FFF9;
+}
+
+
+/* ----------- HOME -----------*/
+.home-picture{
+    width: 50%;
+}
+img{
+    margin: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+.professional-statement{
+    width: 75%;
+    text-align: center;
+    margin: auto;
+}
+
+.brief-bio{
+    width: 80%;
+    text-align: justify;
+    margin: auto auto 25px auto;
+}
+
+.body{
+    margin:10px;
+}
+
+/* ----------- RESUME -----------*/
+dt{
+    font-weight: bold;
+}
+
+.education-list{
+    text-align: left;
+}
+.skills-list{
+    text-align: left;
+}
+.awards-list{
+    text-align: left;
+}
+.work-experience-list{
+    text-align: left;
+}
+.referees-list{
+    text-align: left;
+}
+
+/* ----------- FORM STUFF -----------*/
+.form-btn-container{
+    text-align: center;
+}
+.form-btn {
+    background-color: #1D3354;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .form-btn:hover {
+    background-color: #9ED8DB;
+    color: #1D3354;
+  }
+
+/* ----------- PROJECTS -----------*/
+.projects-list{
+    width: 50%;
+    margin-left:auto; margin-right:auto;
+    text-align: justify;
+}
+
+/* ----------- CONTACT ME -----------*/
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+.form-container {
+    margin: 0% 15% 5% 15%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px 20px 5px 20px;
+}
+.admin-form-container{
+    text-align: justify;
+}
+.admin-form-container input[type="text"], input[type="password"]{
+    text-align: justify;
+}
+
+/* ----------- SOCIAL -----------*/
+h3{
+    text-align: center;
+}
