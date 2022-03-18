@@ -3,7 +3,7 @@ sep="\\|";
 // checks if if text contains separator
 function validateInput(text){
     if(text.includes(sep)){
-        alert("Input not valid. Make sure this character " + sep + " is not in the input.");
+        alert("Input not valid. Make sure this character '" + sep + "' is not in the input.");
         return false;
     }
     
