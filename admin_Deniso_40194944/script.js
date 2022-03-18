@@ -85,6 +85,8 @@ function submitSocial(){
 }
 
 function processLogout(){
-    window.sessionStorage.clear();
-    alert("User logged out successfully.");
+    if(window.confirm("Are you sure you want to log out?")){
+        window.sessionStorage.clear();
+        alert("User logged out successfully.");
+    }
 }
