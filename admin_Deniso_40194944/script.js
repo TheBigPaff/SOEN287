@@ -22,16 +22,27 @@ function saveToTextFile(string, fileName){
     anchorTag.click();
 }
 
-function readFromTextFile(fileButtonId, displayWinId) {
+function readFromTextFile(fileButtonId) {
     var uploadFile = document.getElementById(fileButtonId).files[0];
     var fileReader = new FileReader();
-    fileReader.onload = function(fileLoadedEvent) {
-        var elemHdl = document.getElementById(displayWinId);
-        elemHdl.value = fileLoadedEvent.target.result;
-    };
+    fileReader.onload = loadMessagesToTable;
 
     fileReader.readAsText(uploadFile, "UTF-8");
 }
+
+function loadMessagesToTable(fileLoadedEvent) {
+    let table = document.getElementById("messagesTable").getElementsByTagName("tbody")[0];
+    let content = fileLoadedEvent.target.result;
+
+    table.innerHTML = ""; // clear all rows
+    let messages = content.split(sep); // messages are split by the '\|' separator
+    let messageCount = 0;
+    // add rows for each message
+    messages.forEach(message => {
+        let row = table.insertRow();
+        row.innerHTML = String.raw`<td>Message ${(messageCount++)}</td><td><textarea readonly="readonly">${message}</textarea></td>`;
+    });
+};
 
 function submitIndex(){
     // copy contents of both textarea and store them in one or more txt files on local computer
@@ -69,7 +80,7 @@ function submitProjects(){
 }
 
 function readMessages(){
-    readFromTextFile("uploadFile", "message");
+    readFromTextFile("uploadFile");
 }
 
 function submitSocial(){

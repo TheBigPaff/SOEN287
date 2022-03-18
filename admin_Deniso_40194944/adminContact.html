@@ -22,10 +22,12 @@
         <h3 style="font-style: italic;">(read messages sent from users in contact.html)</h3>
         <div class="form-container">
             <form action="#">
-                <textarea readonly="readonly" id="message" name="message" placeholder="No message loaded yet..."></textarea>
+                <!-- This will be filled up in the js -->
+                <table id="messagesTable"><tbody></tbody></table>
+                <br>
                 <label for="uploadFile">Upload File</label>
                 <input id="uploadFile" type="file">
-                <input class="form-btn" type="button" onclick="readMessages()" value="Read Message">
+                <input class="form-btn" type="button" onclick="readMessages()" value="Read Messages">
             </form>
         </div>
     </body>
