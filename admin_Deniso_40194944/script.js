@@ -1,4 +1,4 @@
-sep="\\|";
+var sep="\\|";
 
 // checks if if text contains separator
 function validateInput(text){
@@ -35,8 +35,8 @@ function readFromTextFile(fileButtonId, displayWinId) {
 
 function submitIndex(){
     // copy contents of both textarea and store them in one or more txt files on local computer
-    statement = document.getElementById("professional_statement").value;
-    biography = document.getElementById("brief_biography").value;
+    let statement = document.getElementById("professional_statement").value;
+    let biography = document.getElementById("brief_biography").value;
 
     // "\|" is the separator, we need to check if there are any.
     if(validateInput(statement) && validateInput(biography)){
@@ -46,11 +46,11 @@ function submitIndex(){
 
 function submitResume(){
     // copy contents of both textarea and store them in one or more txt files on local computer
-    qualifications = document.getElementById("qualifications").value;
-    skill_set = document.getElementById("skill_set").value;
-    awards = document.getElementById("awards").value;
-    work_experience = document.getElementById("work_experience").value;
-    referees = document.getElementById("referees").value;
+    let qualifications = document.getElementById("qualifications").value;
+    let skill_set = document.getElementById("skill_set").value;
+    let awards = document.getElementById("awards").value;
+    let work_experience = document.getElementById("work_experience").value;
+    let referees = document.getElementById("referees").value;
 
     // "\|" is the separator, we need to check if there are any.
     if(validateInput(qualifications) && validateInput(skill_set) && validateInput(awards) && validateInput(work_experience) && validateInput(referees)){
@@ -60,7 +60,7 @@ function submitResume(){
 
 function submitProjects(){
     // copy contents of both textarea and store them in one or more txt files on local computer
-    projects = document.getElementById("projects").value;
+    let projects = document.getElementById("projects").value;
 
     // "\|" is the separator, we need to check if there are any.
     if(validateInput(projects)){
@@ -74,9 +74,9 @@ function readMessages(){
 
 function submitSocial(){
     // copy contents of both textarea and store them in one or more txt files on local computer
-    link1 = document.getElementById("link1").value;
-    link2 = document.getElementById("link2").value;
-    link3 = document.getElementById("link3").value;
+    let link1 = document.getElementById("link1").value;
+    let link2 = document.getElementById("link2").value;
+    let link3 = document.getElementById("link3").value;
 
     // "\|" is the separator, we need to check if there are any.
     if(validateInput(link1) && validateInput(link2) && validateInput(link3)){
