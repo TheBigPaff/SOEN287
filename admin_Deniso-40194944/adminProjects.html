@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script> 
+
+        <title>Projects</title>
+    </head>
+
+    <body>
+        <div class="topnav"> 
+            <a href="adminIndex.html">Home</a>
+            <a href="adminResume.html">Resume</a>
+            <a class="active" href="adminProjects.html">Projects</a>
+            <a href="adminContact.html">Contact</a>
+            <a href="adminSocial.html">Social</a>
+            <a href="logout.html">Logout</a>
+        </div>
+
+        <h1>Admin - Projects</h1>
+        <h3 style="font-style: italic;">(content displayed on projects.html)</h3>
+        <div class="form-container">
+            <form action="#">
+                <label for="projects">My Projects</label>
+                <textarea id="projects" name="projects" placeholder="My Projects..."></textarea>
+
+                <input class="form-btn" type="button" value="Submit" onclick="submitProjects()"/>
+            </form>
+        </div>
+    </body>
+</html>

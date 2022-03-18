@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+	<head>
+		 <title>Assignment 2</title>
+		 <meta name="description" content="Assignment-2 for SOEN-287" />
+		 <meta name="keywords" content="Assignment-2, SOEN-287, HTML, CSS, JavaScript" />
+		 <meta name="author" content="Bonaventure Chidube Molokwu" />
+	</head>
+
+    <body>
+
+	<table>
+		<tr><td>Display Window:</td></tr>
+
+		<tr>
+			<td colspan="3">
+				<textarea id="displayWin" cols="100" rows="25"></textarea>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="3"><button onclick="save2File('fileName')" style="width:100% !important;">Click to Save</button></td>
+		</tr>
+
+		<tr>
+			<td style="text-align:right;">Select a File to Upload:</td>
+			<td><input type="file" id="uploadFile"></td>
+			<td>&nbsp;<td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><button onclick="load4rmFile()">Click to Upload</button></td>
+			<td>&nbsp;<td>
+		</tr>
+	</table>
+
+	 
+
+	<script type="text/javascript"> 
+		 function save2File(fName='textFile') {
+			 var inData = document.getElementById("displayWin").value;
+			 //var data2Blob = new Blob([inData], {type:"text/plain"});
+			 var data2Blob = new File([inData], fName, {type: "text/plain"});
+			 var blob2URL = window.URL.createObjectURL(data2Blob);
+
+			 /* Create a HTML anchor tag via JavaScript, and force download */
+
+			 var anchorTag = document.createElement("a");
+			 anchorTag.href = blob2URL;
+			 anchorTag.download = fName;
+			 anchorTag.click();
+		 }
+
+		 function load4rmFile() {
+			 var uploadFile = document.getElementById("uploadFile").files[0];
+			 var fileReader = new FileReader();
+			 fileReader.onload = function(fileLoadedEvent) {
+				 var elemHdl = document.getElementById("displayWin");
+				 elemHdl.value = fileLoadedEvent.target.result;
+			 };
+
+			 fileReader.readAsText(uploadFile, "UTF-8");
+		 }
+
+	</script>
+	</body>
+</html>

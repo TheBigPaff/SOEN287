@@ -33,57 +33,15 @@ body {
 }
 
 
-/* ----------- HOME -----------*/
-.home-picture{
-    width: 50%;
-}
-img{
-    margin: 2%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h1, h2{
+/* ----------- GENERAL -----------*/
+h1, h2, h3{
     text-align: center;
-}
-
-.professional-statement{
-    width: 75%;
-    text-align: center;
-    margin: auto;
-}
-
-.brief-bio{
-    width: 80%;
-    text-align: justify;
-    margin: auto auto 25px auto;
 }
 
 .body{
     margin:10px;
 }
 
-/* ----------- RESUME -----------*/
-dt{
-    font-weight: bold;
-}
-
-.education-list{
-    text-align: left;
-}
-.skills-list{
-    text-align: left;
-}
-.awards-list{
-    text-align: left;
-}
-.work-experience-list{
-    text-align: left;
-}
-.referees-list{
-    text-align: left;
-}
 
 /* ----------- FORM STUFF -----------*/
 .form-btn-container{
@@ -102,19 +60,11 @@ dt{
     cursor: pointer;
   }
   
-  .form-btn:hover {
+.form-btn:hover {
     background-color: #9ED8DB;
     color: #1D3354;
-  }
-
-/* ----------- PROJECTS -----------*/
-.projects-list{
-    width: 50%;
-    margin-left:auto; margin-right:auto;
-    text-align: justify;
 }
 
-/* ----------- CONTACT ME -----------*/
 input, textarea {
     width: 100%;
     padding: 12px;
@@ -123,6 +73,9 @@ input, textarea {
     box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
+}
+
+textarea{
     resize: vertical;
 }
 
@@ -139,7 +92,6 @@ input, textarea {
     text-align: justify;
 }
 
-/* ----------- SOCIAL -----------*/
-h3{
-    text-align: center;
+#message{
+    height: 200px;
 }
