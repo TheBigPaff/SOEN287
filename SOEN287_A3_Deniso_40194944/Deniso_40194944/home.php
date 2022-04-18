@@ -3,7 +3,6 @@
     $myfile = fopen($filename, "r") or die("Unable to open file!");
     $content = fread($myfile,filesize($filename));
     $contents = explode("\\|", $content);
-    print_r($contents);
     fclose($myfile);
 ?>
 <!DOCTYPE html>
