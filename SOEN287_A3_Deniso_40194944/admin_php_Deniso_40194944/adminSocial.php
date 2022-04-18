@@ -1,5 +1,8 @@
 <?php
 session_start();
+$filename = "../social.txt";
+
+
 if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
 }

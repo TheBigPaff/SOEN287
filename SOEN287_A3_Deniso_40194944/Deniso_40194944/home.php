@@ -1,10 +1,8 @@
 <?php
-    $filename = "../index.txt";
-    $myfile = fopen($filename, "r") or die("Unable to open file!");
-    $content = fread($myfile,filesize($filename));
-    $contents = explode("\\|", $content);
-    fclose($myfile);
+    include_once "../utils.php";
+    $contents = getHome();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

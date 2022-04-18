@@ -1,3 +1,8 @@
+<?php
+    include_once "../utils.php";
+    $contents = getProjects();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,12 +27,9 @@
             thus, should start with the most recent to the oldest -->
             <h2>Personal projects I worked on during the last 10 years</h2>
             <ol class="projects-list" reversed="reversed" type="I">
-                <li>Spotify playlist recommender - Android App - Java</li>
-                <li>Online Multiplayer Mobile Game in C#, Unity Engine</li>
-                <li>Fitness Training Software in C#, WPF</li>
-                <li>Full-stack website in PHP, MySQL</li>
-                <li>CRUD Website in PHP, MySQL</li>
-                <li>Videogame Tournament Manager Discord Bot in Python</li>
+                <?php
+                    echo $contents[0];
+                ?>
             </ol>
         </div>
     </body>

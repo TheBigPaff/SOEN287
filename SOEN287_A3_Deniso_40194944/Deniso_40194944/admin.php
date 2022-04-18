@@ -45,6 +45,7 @@ if(isset($_POST["username"]) && !empty($_POST["username"]) && isset($_POST["pass
     else{
         die("6: Incorrect password");
     }
+    $conn->close();
 }
 ?>
 

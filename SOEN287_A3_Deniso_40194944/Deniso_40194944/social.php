@@ -1,3 +1,8 @@
+<?php
+    include_once "../utils.php";
+    $contents = getSocial();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,9 +26,9 @@
         <h3>Click on any icon to be directed to my page.</h3>
         <img src="assets/social_media_icons.jpg" usemap="#map1" alt="Image of social media icons"/>
         <map name="map1" >
-            <area shape="rect" coords="0,0,110,110" alt="Facebook area" href="https://www.facebook.com/TheBigPaff/"/>
-            <area shape="rect" coords="175,0,285,110" alt="Twitter area" href="https://twitter.com/TheBigPaff"/>
-            <area shape="rect" coords="345,0,457,110" alt="Google+ area" href="https://en.wikipedia.org/wiki/Google%2B"/>
+            <area shape="rect" coords="0,0,110,110" alt="Facebook area" href="<?php echo $contents[0]?>"/>
+            <area shape="rect" coords="175,0,285,110" alt="Twitter area" href="<?php echo $contents[1]?>"/>
+            <area shape="rect" coords="345,0,457,110" alt="Google+ area" href="<?php echo $contents[2]?>"/>
             <area shape="rect" coords="0,170,110,280" alt="Instagram area" href="https://www.instagram.com/patrick_deniso/"/>
             <area shape="rect" coords="175,170,285,280" alt="Dribbble area" href="https://en.wikipedia.org/wiki/Dribbble"/>
             <area shape="rect" coords="345,170,457,280" alt="Linkedin area" href="https://www.linkedin.com/in/patrick-deniso/"/>

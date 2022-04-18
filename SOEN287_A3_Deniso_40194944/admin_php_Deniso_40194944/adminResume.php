@@ -1,9 +1,20 @@
 <?php
 session_start();
+$filename = "../resume.txt";
+
 if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
 }
-
+if(isset($_POST["qualifications"]) 
+    && isset($_POST["skill_set"])
+    && isset($_POST["awards"])
+    && isset($_POST["work_experience"])
+    && isset($_POST["referees"])){
+    $sep="\\|";
+    file_put_contents($filename, $_POST["qualifications"] . $sep . $_POST["skill_set"]
+                        . $sep . $_POST["awards"] . $sep . $_POST["work_experience"] 
+                        . $sep . $_POST["referees"]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +57,7 @@ if(!isset($_SESSION["admin"])){
                 <label for="referees">Referees</label>
                 <textarea id="referees" name="referees" placeholder="Referees..."></textarea>
 
-                <input class="form-btn" type="button" value="Submit"/>
+                <input class="form-btn" type="submit" value="Submit"/>
             </form>
         </div>
 

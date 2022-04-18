@@ -1,5 +1,7 @@
 <?php
 session_start();
+$filename = "../projects.txt";
+
 if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
 }

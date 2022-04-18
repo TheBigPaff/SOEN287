@@ -1,16 +1,14 @@
 <?php
 session_start();
+$filename = "../index.txt";
+
 if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
 }
 if(isset($_POST["professional_statement"]) && isset($_POST["brief_biography"])){
     $sep="\\|";
-    file_put_contents("../index.txt", $_POST["professional_statement"] . $sep . $_POST["brief_biography"]);
-    
+    file_put_contents($filename, $_POST["professional_statement"] . $sep . $_POST["brief_biography"]);
 }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
