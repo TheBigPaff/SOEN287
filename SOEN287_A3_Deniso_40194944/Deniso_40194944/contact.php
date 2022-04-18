@@ -1,3 +1,26 @@
+<?php
+$filename = "../contact.txt";
+if(isset($_POST["name"]) && isset($_POST["email"]) 
+&& isset($_POST["telnumber"]) && isset($_POST["subject"])){
+    $conn = new mysqli("localhost", "root", "", "soen287_a3");
+    if(mysqli_connect_errno()){
+        die("1: Connection Failed"); // error code #1 = connection failed
+    }
+
+    $username = $_POST["name"];
+    $email = $_POST["email"];
+    $telnumber = $_POST["telnumber"];
+    $subject = $_POST["subject"];
+    
+    // check if name exists
+    $query = "INSERT INTO message(full_name, email, tel_number, message) VALUES (?,?,?,?)";
+    $stmt = $conn->prepare($query);
+
+    $stmt->bind_param("ssss", $username, $email, $telnumber, $subject);
+    $stmt->execute();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +44,7 @@
         <h2>Contact Me!</h2>
 
         <div class="form-container">
-            <form action="#">
+            <form action="#" method="POST">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="Your name...">
 
