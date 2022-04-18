@@ -9,12 +9,12 @@
 
     <body>
         <div class="topnav"> 
-            <a href="home.html">Home</a>
-            <a href="resume.html">Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-            <a class="active" href="social.html">Social</a>
-            <a href="admin.html">Admin</a>
+            <a href="home.php">Home</a>
+            <a href="resume.php">Resume</a>
+            <a href="projects.php">Projects</a>
+            <a href="contact.php">Contact</a>
+            <a class="active" href="social.php">Social</a>
+            <a href="admin.php">Admin</a>
         </div>
         
         <h2>These are some of the socials you can find me on!</h2>

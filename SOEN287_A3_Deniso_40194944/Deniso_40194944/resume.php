@@ -9,12 +9,12 @@
 
     <body>
         <div class="topnav"> 
-            <a href="home.html">Home</a>
-            <a class="active" href="resume.html">Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-            <a href="social.html">Social</a>
-            <a href="admin.html">Admin</a>
+            <a href="home.php">Home</a>
+            <a class="active" href="resume.php">Resume</a>
+            <a href="projects.php">Projects</a>
+            <a href="contact.php">Contact</a>
+            <a href="social.php">Social</a>
+            <a href="admin.php">Admin</a>
         </div>
         <!-- chronological list depicting my education and respective qualifications obtained
         list left-aligned with respect to the webpage layout -->

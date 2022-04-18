@@ -10,12 +10,12 @@
 
     <body>
         <div class="topnav">
-            <a class="active" href="home.html">Home</a>
-            <a href="resume.html">Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-            <a href="social.html">Social</a>
-            <a href="admin.html">Admin</a>
+            <a class="active" href="home.php">Home</a>
+            <a href="resume.php">Resume</a>
+            <a href="projects.php">Projects</a>
+            <a href="contact.php">Contact</a>
+            <a href="social.php">Social</a>
+            <a href="admin.php">Admin</a>
           </div>
         
         <!-- image of myself aligned to the center of the webpage -->

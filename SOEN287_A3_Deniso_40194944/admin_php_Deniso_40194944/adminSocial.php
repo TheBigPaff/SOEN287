@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["admin"])){
+    header("Location:/Deniso_40194944/admin.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,12 +17,12 @@
 
     <body>
         <div class="topnav"> 
-            <a href="adminIndex.html">Home</a>
-            <a href="adminResume.html">Resume</a>
-            <a href="adminProjects.html">Projects</a>
-            <a href="adminContact.html">Contact</a>
-            <a class="active" href="adminSocial.html">Social</a>
-            <a href="logout.html">Logout</a>
+            <a href="adminIndex.php">Home</a>
+            <a href="adminResume.php">Resume</a>
+            <a href="adminProjects.php">Projects</a>
+            <a href="adminContact.php">Contact</a>
+            <a class="active" href="adminSocial.php">Social</a>
+            <a href="logout.php">Logout</a>
         </div>
         
         <h1>Admin - Social</h1>
