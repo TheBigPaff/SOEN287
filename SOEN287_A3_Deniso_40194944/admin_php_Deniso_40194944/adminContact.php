@@ -28,7 +28,7 @@ if(!isset($_SESSION["admin"])){
         <h1>Admin - Contact</h1>
         <h3 style="font-style: italic;">(read messages sent from users in contact.html)</h3>
         <div class="form-container">
-            <form action="#">
+            <form action="#" method="POST">
                 <!-- This will be filled up in the js -->
                 <table id="messagesTable"><tbody></tbody></table>
                 <br>

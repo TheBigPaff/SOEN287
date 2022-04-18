@@ -3,6 +3,13 @@ session_start();
 if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
 }
+if(isset($_POST["professional_statement"]) && isset($_POST["brief_biography"])){
+    $sep="\\|";
+    file_put_contents("../index.txt", $_POST["professional_statement"] . $sep . $_POST["brief_biography"]);
+    
+}
+
+
 
 ?>
 <!DOCTYPE html>
@@ -28,14 +35,14 @@ if(!isset($_SESSION["admin"])){
         <h1>Admin - Home</h1>
         <h3 style="font-style: italic;">(content displayed on index.html)</h3>
         <div class="form-container">
-            <form action="#">
+            <form action="#" method="POST">
                 <label for="professional_statement">Professional Statement</label>
                 <textarea id="professional_statement" name="professional_statement" placeholder="Professional Statement..."></textarea>
 
                 <label for="brief_biography">Brief Biography</label>
                 <textarea id="brief_biography" name="brief_biography" placeholder="Brief Biography..."></textarea>
 
-                <input class="form-btn" type="button" value="Submit" onclick="submitIndex()"/>
+                <input class="form-btn" type="submit" value="Submit"/>
             </form>
         </div>
     </body>

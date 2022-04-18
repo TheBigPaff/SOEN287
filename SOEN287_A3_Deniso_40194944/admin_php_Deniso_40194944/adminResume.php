@@ -30,7 +30,7 @@ if(!isset($_SESSION["admin"])){
         <h1>Admin - Resume</h1>
         <h3 style="font-style: italic;">(content displayed on resume.html)</h3>
         <div class="form-container">
-            <form action="#">
+            <form action="#" method="POST">
                 <label for="qualifications">Educational Qualifications</label>
                 <textarea id="qualifications" name="qualifications" placeholder="Educational Qualifications..."></textarea>
 
@@ -46,7 +46,7 @@ if(!isset($_SESSION["admin"])){
                 <label for="referees">Referees</label>
                 <textarea id="referees" name="referees" placeholder="Referees..."></textarea>
 
-                <input class="form-btn" type="button" value="Submit" onclick="submitResume()"/>
+                <input class="form-btn" type="button" value="Submit"/>
             </form>
         </div>
 

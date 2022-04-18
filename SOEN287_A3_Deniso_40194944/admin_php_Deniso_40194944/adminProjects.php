@@ -28,11 +28,11 @@ if(!isset($_SESSION["admin"])){
         <h1>Admin - Projects</h1>
         <h3 style="font-style: italic;">(content displayed on projects.html)</h3>
         <div class="form-container">
-            <form action="#">
+            <form action="#" method="POST">
                 <label for="projects">My Projects</label>
                 <textarea id="projects" name="projects" placeholder="My Projects..."></textarea>
 
-                <input class="form-btn" type="button" value="Submit" onclick="submitProjects()"/>
+                <input class="form-btn" type="button" value="Submit"/>
             </form>
         </div>
     </body>

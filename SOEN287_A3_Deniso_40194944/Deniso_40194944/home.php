@@ -1,3 +1,11 @@
+<?php
+    $filename = "../index.txt";
+    $myfile = fopen($filename, "r") or die("Unable to open file!");
+    $content = fread($myfile,filesize($filename));
+    $contents = explode("\\|", $content);
+    print_r($contents);
+    fclose($myfile);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,9 +35,9 @@
         <br>
         <h2>Professional Statement</h2>
         <div class="professional-statement">
-            I'm passionate about everything computer science: web development, mobile development, AI and machine learning, game development, cybersecurity, networking...
-            <br>I'm an avid problem-solver, always looking for new stuff to learn and to tinker with.
-            <br>My goal is to improve my skills and create cool projects.
+            <?php
+                echo $contents[0];
+            ?>
         </div>
         
         <!-- brief bio about myself and my potentials, using div.
@@ -37,9 +45,9 @@
         <br>
         <h2>Brief Bio</h2>
         <div class="brief-bio">
-            Graduated with a Computer Science high-school diploma from Italy, I'm now pursuing a Bachelor of Computer Science at Concordia University in Montréal, Canada.
-            <br><br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at felis tortor. Quisque volutpat urna quis luctus accumsan. Fusce vitae ligula vitae diam faucibus maximus. Nullam venenatis ligula velit, a cursus felis tempus non. Curabitur urna elit, ultricies non est quis, viverra euismod nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            <?php
+                echo $contents[1];
+            ?>
         </div>
     </body>
 </html>

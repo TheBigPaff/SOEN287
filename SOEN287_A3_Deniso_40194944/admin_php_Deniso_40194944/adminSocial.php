@@ -28,7 +28,7 @@ if(!isset($_SESSION["admin"])){
         <h1>Admin - Social</h1>
         <h3 style="font-style: italic;">(content displayed on social.html)</h3>
         <div class="form-container">
-            <form action="#">
+            <form action="#" method="POST">
                 <label for="link1">Social Link 1</label>
                 <input type="text" id="link1" name="link1" placeholder="Social link 1...">
 
@@ -38,7 +38,7 @@ if(!isset($_SESSION["admin"])){
                 <label for="link1">Social Link 3</label>
                 <input type="text" id="link3" name="link3" placeholder="Social link 3...">
                 
-                <input class="form-btn" type="button" value="Submit" onclick="submitSocial()"/>
+                <input class="form-btn" type="button" value="Submit"/>
             </form>
         </div>
     </body>
