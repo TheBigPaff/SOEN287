@@ -1,11 +1,17 @@
 <?php
+include_once "../utils.php";
 session_start();
 $filename = "../projects.txt";
+$contents = getProjects();
 
 if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
 }
-
+if(isset($_POST["projects"])){
+    $sep="\\|";
+    file_put_contents($filename, $_POST["projects"]);
+    $contents = getProjects();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +38,9 @@ if(!isset($_SESSION["admin"])){
         <div class="form-container">
             <form action="#" method="POST">
                 <label for="projects">My Projects</label>
-                <textarea id="projects" name="projects" placeholder="My Projects..."></textarea>
+                <textarea id="projects" name="projects" placeholder="My Projects..."><?php echo $contents[0] ?></textarea>
 
-                <input class="form-btn" type="button" value="Submit"/>
+                <input class="form-btn" type="submit" value="Submit"/>
             </form>
         </div>
     </body>

@@ -1,6 +1,8 @@
 <?php
+include_once "../utils.php";
 session_start();
 $filename = "../index.txt";
+$contents = getHome();
 
 if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
@@ -8,6 +10,7 @@ if(!isset($_SESSION["admin"])){
 if(isset($_POST["professional_statement"]) && isset($_POST["brief_biography"])){
     $sep="\\|";
     file_put_contents($filename, $_POST["professional_statement"] . $sep . $_POST["brief_biography"]);
+    $contents = getHome();
 }
 ?>
 <!DOCTYPE html>
@@ -35,10 +38,10 @@ if(isset($_POST["professional_statement"]) && isset($_POST["brief_biography"])){
         <div class="form-container">
             <form action="#" method="POST">
                 <label for="professional_statement">Professional Statement</label>
-                <textarea id="professional_statement" name="professional_statement" placeholder="Professional Statement..."></textarea>
+                <textarea id="professional_statement" name="professional_statement" placeholder="Professional Statement..."><?php echo $contents[0] ?></textarea>
 
                 <label for="brief_biography">Brief Biography</label>
-                <textarea id="brief_biography" name="brief_biography" placeholder="Brief Biography..."></textarea>
+                <textarea id="brief_biography" name="brief_biography" placeholder="Brief Biography..."><?php echo $contents[1] ?></textarea>
 
                 <input class="form-btn" type="submit" value="Submit"/>
             </form>

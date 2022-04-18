@@ -1,6 +1,8 @@
-<?php
+<?php    
+include_once "../utils.php";
 session_start();
 $filename = "../resume.txt";
+$contents = getResume();
 
 if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
@@ -14,6 +16,8 @@ if(isset($_POST["qualifications"])
     file_put_contents($filename, $_POST["qualifications"] . $sep . $_POST["skill_set"]
                         . $sep . $_POST["awards"] . $sep . $_POST["work_experience"] 
                         . $sep . $_POST["referees"]);
+    $contents = getResume();
+
 }
 ?>
 <!DOCTYPE html>
@@ -43,19 +47,19 @@ if(isset($_POST["qualifications"])
         <div class="form-container">
             <form action="#" method="POST">
                 <label for="qualifications">Educational Qualifications</label>
-                <textarea id="qualifications" name="qualifications" placeholder="Educational Qualifications..."></textarea>
+                <textarea id="qualifications" name="qualifications" placeholder="Educational Qualifications..."><?php echo $contents[0] ?></textarea>
 
                 <label for="skill_set">Skill Set</label>
-                <textarea id="skill_set" name="skill_set" placeholder="Skill Set..."></textarea>
+                <textarea id="skill_set" name="skill_set" placeholder="Skill Set..."><?php echo $contents[1] ?></textarea>
 
                 <label for="awards">Awards/Recognition</label>
-                <textarea id="awards" name="awards" placeholder="Awards/Recognition..."></textarea>
+                <textarea id="awards" name="awards" placeholder="Awards/Recognition..."><?php echo $contents[2] ?></textarea>
 
                 <label for="work_experience">Work Experience</label>
-                <textarea id="work_experience" name="work_experience" placeholder="Work Experience..."></textarea>
+                <textarea id="work_experience" name="work_experience" placeholder="Work Experience..."><?php echo $contents[3] ?></textarea>
                 
                 <label for="referees">Referees</label>
-                <textarea id="referees" name="referees" placeholder="Referees..."></textarea>
+                <textarea id="referees" name="referees" placeholder="Referees..."><?php echo $contents[4] ?></textarea>
 
                 <input class="form-btn" type="submit" value="Submit"/>
             </form>

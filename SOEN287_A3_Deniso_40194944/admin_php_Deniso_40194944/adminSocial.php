@@ -1,10 +1,17 @@
 <?php
+include_once "../utils.php";
 session_start();
 $filename = "../social.txt";
-
+$contents = getSocial();
+    
 
 if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
+}
+if(isset($_POST["link1"]) && isset($_POST["link2"]) && isset($_POST["link3"])){
+    $sep="\\|";
+    file_put_contents($filename, $_POST["link1"] . $sep . $_POST["link2"] . $sep . $_POST["link3"]);
+    $contents = getSocial();
 }
 
 ?>
@@ -33,15 +40,15 @@ if(!isset($_SESSION["admin"])){
         <div class="form-container">
             <form action="#" method="POST">
                 <label for="link1">Social Link 1</label>
-                <input type="text" id="link1" name="link1" placeholder="Social link 1...">
+                <input type="text" id="link1" name="link1" placeholder="Social link 1..." value="<?php echo $contents[0] ?>">
 
                 <label for="link1">Social Link 2</label>
-                <input type="text" id="link2" name="link2" placeholder="Social link 2...">
+                <input type="text" id="link2" name="link2" placeholder="Social link 2..." value="<?php echo $contents[1] ?>">
 
                 <label for="link1">Social Link 3</label>
-                <input type="text" id="link3" name="link3" placeholder="Social link 3...">
+                <input type="text" id="link3" name="link3" placeholder="Social link 3..." value="<?php echo $contents[2] ?>">
                 
-                <input class="form-btn" type="button" value="Submit"/>
+                <input class="form-btn" type="submit" value="Submit"/>
             </form>
         </div>
     </body>

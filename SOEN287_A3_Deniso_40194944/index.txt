@@ -1,4 +1,1 @@
-test
-newline?
-hopefully
-lol\|
+1\|1
