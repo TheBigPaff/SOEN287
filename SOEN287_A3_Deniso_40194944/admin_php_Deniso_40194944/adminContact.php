@@ -4,7 +4,29 @@ if(!isset($_SESSION["admin"])){
     header("Location:/Deniso_40194944/admin.php");
 }
 
+$contents = ["", "", "", ""];
+$message_id = -1;
+if(isset($_POST["message_id"])){
+    $message_id = $_POST["message_id"];
+}
+
+$conn = new mysqli("localhost", "root", "", "soen287_a3");
+if(mysqli_connect_errno()){
+    die("1: Connection Failed"); // error code #1 = connection failed
+}
+
+
+$query = "SELECT * FROM message";
+$result = $conn->query($query);
+$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+if($message_id != -1){
+    $contents = $rows[$message_id - 1]; // index is always id - 1 since it's auto_increment, not really safe but whatevs
+}
+$conn->close();
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,11 +52,24 @@ if(!isset($_SESSION["admin"])){
         <div class="form-container">
             <form action="#" method="POST">
                 <!-- This will be filled up in the js -->
-                <table id="messagesTable"><tbody></tbody></table>
+                <textarea readonly="readonly" placeholder="Full Name..."><?php if($message_id != -1) echo $contents["full_name"] ?></textarea>
+                <textarea readonly="readonly" placeholder="Email..."><?php if($message_id != -1) echo $contents["email"] ?></textarea>
+                <textarea readonly="readonly" placeholder="Phone number..."><?php if($message_id != -1) echo $contents["tel_number"] ?></textarea>
+                <textarea readonly="readonly" placeholder="Message..."><?php if($message_id != -1) echo $contents["message"] ?></textarea>
+
                 <br>
-                <label for="uploadFile">Upload File</label>
-                <input id="uploadFile" type="file">
-                <input class="form-btn" type="button" onclick="readMessages()" value="Read Messages">
+                <label>Select message to view</label>
+                <select name="message_id" onchange="this.form.submit()">
+                <option hidden disabled selected value></option>
+                    <?php
+                        foreach ($rows as $rowData) {
+                            if ($message_id == $rowData["id"])
+                                echo "<option selected value='".$rowData["id"]."'>". $rowData["id"] . " - " . $rowData["full_name"] ."</option>";
+                            else
+                                echo "<option value='".$rowData["id"]."'>". $rowData["id"] . " - " . $rowData["full_name"] ."</option>";
+                        }
+                    ?>
+                </select>
             </form>
         </div>
     </body>

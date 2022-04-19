@@ -18,6 +18,8 @@ if(isset($_POST["name"]) && isset($_POST["email"])
 
     $stmt->bind_param("ssss", $username, $email, $telnumber, $subject);
     $stmt->execute();
+
+    $conn->close();
 }
 ?>
 
