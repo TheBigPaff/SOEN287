@@ -41,6 +41,21 @@ if(isset($_POST["username"]) && !empty($_POST["username"]) && isset($_POST["pass
         // success user logged in
         $_SESSION["admin"] = $user_info["id"];
         header("Location:" . $admin_page);
+
+        /* 
+        I DID IT IN PHP BECAUSE IT MAKES SENSE, BUT HERE IS HOW TO DO IT WITH JAVASCRIPT (client session)
+            // Save data to sessionStorage
+            sessionStorage.setItem('key', 'value');
+
+            // Get saved data from sessionStorage
+            let data = sessionStorage.getItem('key');
+
+            // Remove saved data from sessionStorage
+            sessionStorage.removeItem('key');
+
+            // Remove all saved data from sessionStorage
+            sessionStorage.clear();
+        */
     }
     else{
         die("6: Incorrect password");
